@@ -1,5 +1,5 @@
 // import { compose, createStore, applyMiddleware } from 'redux';
-import { ConfigureStoreOptions } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 // import { persistStore, persistReducer } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
@@ -26,7 +26,7 @@ const middleWares = [process.env.NODE_ENV === 'development' && logger].filter(
 
 // const composedEnhancers = composeEnhancer(applyMiddleware(...middleWares));
 
-export const store = ConfigureStoreOptions({
+export const store = configureStore({
   reducer: rootReducer,
   // middleWare: middleWares,
 });
